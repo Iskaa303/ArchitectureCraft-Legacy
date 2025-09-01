@@ -1,0 +1,9 @@
+{
+  "itemGroup.architecturecraft": "ArchitectureCraft",
+  "block.architecturecraft.example_block": "Example Block",
+  "item.architecturecraft.example_item": "Example Item",
+
+  "architecturecraft.configuration.title": "ArchitectureCraft Configs",
+  "architecturecraft.configuration.section.architecturecraft.common.toml": "ArchitectureCraft Configs",
+  "architecturecraft.configuration.section.architecturecraft.common.toml.title": "ArchitectureCraft Configs"
+}
