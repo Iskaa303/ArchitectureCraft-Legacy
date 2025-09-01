@@ -1,10 +1,10 @@
 package net.iskaa303.architecturecraft;
 
+import net.iskaa303.architecturecraft.utils.ArchitectureCraftLogger;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
 
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.food.FoodProperties;
@@ -13,7 +13,6 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.material.MapColor;
 import net.neoforged.bus.api.IEventBus;
@@ -33,7 +32,8 @@ import net.neoforged.neoforge.registries.DeferredRegister;
 @Mod(ArchitectureCraft.MODID)
 public class ArchitectureCraft {
     public static final String MODID = "architecturecraft";
-    public static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger RAW_LOGGER = LogUtils.getLogger();
+    public final static ArchitectureCraftLogger LOGGER = new ArchitectureCraftLogger(RAW_LOGGER, "ArchitectureCraft Legacy");
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(MODID);
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(MODID);
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, MODID);
@@ -67,7 +67,7 @@ public class ArchitectureCraft {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        LOGGER.info("[ArchitectureCraft Legacy] Hello from Common Setup");
+        LOGGER.info("Hello from Common Setup");
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -78,6 +78,6 @@ public class ArchitectureCraft {
 
     @SubscribeEvent
     public void onServerStarting(ServerStartingEvent event) {
-        LOGGER.info("[ArchitectureCraft Legacy] Hello from server starting");
+        LOGGER.info("Hello from Server Starting");
     }
 }

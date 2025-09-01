@@ -1,6 +1,5 @@
 package net.iskaa303.architecturecraft;
 
-import net.minecraft.client.Minecraft;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.ModContainer;
@@ -19,6 +18,6 @@ public class ArchitectureCraftClient {
 
     @SubscribeEvent
     static void onClientSetup(FMLClientSetupEvent event) {
-        ArchitectureCraft.LOGGER.info("[ArchitectureCraft Legacy] Hello from Setup");
+        ArchitectureCraft.LOGGER.info("Hello from Client Setup");
     }
 }
